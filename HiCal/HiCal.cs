@@ -67,19 +67,31 @@ namespace HiCal
         {
             List<Meeting> retVal = new List<Meeting>();
 
-            for(int i = 0; i <= MeetingsToMerge.Count - 1; i++)
+           while(MeetingsToMerge.Count > 0)
             {
-                Meeting currentTarget = MeetingsToMerge[i];
+                Meeting currentTarget = MeetingsToMerge[0];
                 //Now search through every other element in the list
-                for(int j = i; j < MeetingsToMerge.Count - 1; j++)
+                bool NoMerges = true;
+                for(int j = 0; j < retVal.Count; j++)
                 {
-                    Meeting possibleTarget = MeetingsToMerge[j];
+                    Meeting possibleTarget = retVal[j];
                     if(IsOverlap(currentTarget, possibleTarget))
                     {
                         //Merge them
-                        currentTarget.Merge(possibleTarget);
+                        possibleTarget.Merge(currentTarget);
+                        NoMerges = false;
                     }
+                    
                 }
+                //Add the currentTarget to the return string
+                if (NoMerges == true)
+                {
+                    //We have a new element, add it into our return string
+                    retVal.Add(currentTarget);
+                }
+                //Delete it from the search string
+                MeetingsToMerge.RemoveAt(0);
+
             }
 
             return retVal;
@@ -114,7 +126,7 @@ namespace HiCal
         public void Merge(Meeting MeetingToMerge)
         {
             StartTime = Math.Min(StartTime, MeetingToMerge.StartTime);
-            EndTime = Math.Max(StartTime, MeetingToMerge.StartTime);
+            EndTime = Math.Max(EndTime, MeetingToMerge.EndTime);
         }
 
         public override string ToString()
