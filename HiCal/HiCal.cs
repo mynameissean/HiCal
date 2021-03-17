@@ -42,6 +42,12 @@ namespace HiCal
         protected bool IsOverlap(Meeting Meeting1, Meeting Meeting2)
         {
             bool retVal = false;
+            
+            if(Meeting1.StartTime <= Meeting2.EndTime && Meeting2.StartTime <= Meeting1.EndTime)
+            {
+                //Overlap
+                retVal = true;
+            }
 
             return retVal;
         }
