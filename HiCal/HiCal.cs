@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace HiCal
 {
@@ -25,6 +26,17 @@ namespace HiCal
          * Con - Duplicates the array memory, would need to efficiently search for matching elements in the array. 
          */
         public abstract List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge);
+
+        public string ToString(List<Meeting> MeetingsToDisplay)
+        {
+            StringBuilder retVal = new StringBuilder();
+            foreach(Meeting meeting in MeetingsToDisplay)
+            {
+                retVal.Append(meeting.ToString() + ", ");
+            }
+
+            return retVal.ToString();
+        }
         
     }
 
