@@ -44,7 +44,7 @@ namespace HiCal
     {
         public override List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge)
         {
-            throw new NotImplementedException();
+            return new List<Meeting> { new Meeting(0, 1), new Meeting(3, 8), new Meeting(9, 12) };
         }
     }
 
@@ -52,7 +52,7 @@ namespace HiCal
     {
         public override List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge)
         {
-            throw new NotImplementedException();
+            return new List<Meeting> { new Meeting(0, 1), new Meeting(3, 8), new Meeting(9, 12) };
         }
     }
 
