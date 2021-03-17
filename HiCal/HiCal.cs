@@ -24,6 +24,7 @@ namespace HiCal
          * add the element to the array. If there is a match, increase the size of element that was found.
          * Pro - 
          * Con - Duplicates the array memory, would need to efficiently search for matching elements in the array. 
+         * Option 3 - Same as option 1, but delete meetings that you merge in
          */
         public abstract List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge);
 
@@ -37,15 +38,51 @@ namespace HiCal
 
             return retVal.ToString();
         }
+
+        protected bool IsOverlap(Meeting Meeting1, Meeting Meeting2)
+        {
+            bool retVal = false;
+
+            return retVal;
+        }
+
+        protected void Merge(Meeting MeetingToMerge)
+        {
+
+        }
         
     }
 
     public class HiCalBrute : HiCalBase
     {
+        /**
+         * Look at Meeting 1.  Then look at every other element to see if it
+         * increases the size of element 1.  If it does, increase the size of the current meeting and continue searching.  
+         * Loop back again and look at Meeting 2
+         **/
         public override List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge)
         {
-            return new List<Meeting> { new Meeting(0, 1), new Meeting(3, 8), new Meeting(9, 12) };
+            List<Meeting> retVal = new List<Meeting>();
+
+            for(int i = 0; i <= MeetingsToMerge.Count; i++)
+            {
+                Meeting currentTarget = MeetingsToMerge[i];
+                //Now search through every other element in the list
+                for(int j = i; j < MeetingsToMerge.Count; j++)
+                {
+                    Meeting possibleTarget = MeetingsToMerge[j];
+                    if(IsOverlap(currentTarget, possibleTarget))
+                    {
+                        //Merge them
+                        currentTarget.Merge(possibleTarget);
+                    }
+                }
+            }
+
+            return retVal;
         }
+
+        
     }
 
     public class HiCalMatch : HiCalBase
