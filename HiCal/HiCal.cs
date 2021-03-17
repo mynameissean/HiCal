@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 namespace HiCal
 {
-    public abstract class HiCal
+    public abstract class HiCalBase
     {
+        public static void Main(string[] args)
+        { }
 
-
-        public HiCal()
+        public HiCalBase()
         {
 
         }
@@ -27,7 +28,7 @@ namespace HiCal
         
     }
 
-    public class HiCalBrute : HiCal
+    public class HiCalBrute : HiCalBase
     {
         public override List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge)
         {
@@ -35,7 +36,7 @@ namespace HiCal
         }
     }
 
-    public class HiCalMatch : HiCal
+    public class HiCalMatch : HiCalBase
     {
         public override List<Meeting> MergeRanges(List<Meeting> MeetingsToMerge)
         {
