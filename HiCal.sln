@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiCal", "HiCal\HiCal.csproj", "{A07E3ED3-9668-40CA-82D4-E0B53E571BDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07E3ED3-9668-40CA-82D4-E0B53E571BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07E3ED3-9668-40CA-82D4-E0B53E571BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07E3ED3-9668-40CA-82D4-E0B53E571BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07E3ED3-9668-40CA-82D4-E0B53E571BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DDE87A8-F5C9-45D8-99DE-E87D3E3896C6}
+	EndGlobalSection
+EndGlobal
