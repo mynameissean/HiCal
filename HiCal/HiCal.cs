@@ -113,7 +113,8 @@ namespace HiCal
 
         public void Merge(Meeting MeetingToMerge)
         {
-
+            StartTime = Math.Min(StartTime, MeetingToMerge.StartTime);
+            EndTime = Math.Max(StartTime, MeetingToMerge.StartTime);
         }
 
         public override string ToString()
