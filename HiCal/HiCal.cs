@@ -61,11 +61,11 @@ namespace HiCal
         {
             List<Meeting> retVal = new List<Meeting>();
 
-            for(int i = 0; i <= MeetingsToMerge.Count; i++)
+            for(int i = 0; i <= MeetingsToMerge.Count - 1; i++)
             {
                 Meeting currentTarget = MeetingsToMerge[i];
                 //Now search through every other element in the list
-                for(int j = i; j < MeetingsToMerge.Count; j++)
+                for(int j = i; j < MeetingsToMerge.Count - 1; j++)
                 {
                     Meeting possibleTarget = MeetingsToMerge[j];
                     if(IsOverlap(currentTarget, possibleTarget))
