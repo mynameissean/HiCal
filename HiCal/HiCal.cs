@@ -46,10 +46,7 @@ namespace HiCal
             return retVal;
         }
 
-        protected void Merge(Meeting MeetingToMerge)
-        {
-
-        }
+       
         
     }
 
@@ -106,6 +103,11 @@ namespace HiCal
             // Number of 30 min blocks past 9:00 am
             StartTime = startTime;
             EndTime = endTime;
+        }
+
+        public void Merge(Meeting MeetingToMerge)
+        {
+
         }
 
         public override string ToString()
