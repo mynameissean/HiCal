@@ -86,7 +86,7 @@ namespace HiCal
                 //Add the currentTarget to the return string
                 if (NoMerges == true)
                 {
-                    //We have a new element, add it into our return string
+                    //We have a new unique element, add it into our return string
                     retVal.Add(currentTarget);
                 }
                 //Delete it from the search string
